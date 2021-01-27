@@ -1,3 +1,6 @@
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 # Color Manager
 
 This is a simple yet powerful color management solution for Unity. It allows you to create color palettes as Scriptable Objects to bind swatches to any shader color property to any number of materials.
@@ -16,4 +19,6 @@ Each swatch consist in a color and a collection of material colors. You can bind
 
 ![exampleGif](https://i.ibb.co/cLwxkX5/Color-Manager.gif)
 
+## Licence
 
+* MIT
