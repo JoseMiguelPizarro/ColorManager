@@ -1,5 +1,5 @@
 {
-    "name": "com.RoJo.ColorManagement",
+    "name": "com.rojo.colormanagement",
     "version":"0.0.1",
     "displayName":"Color Management",
     "description":"This is a tool that allows you to create multiples palettes and swatches to sync as many materials and shader colors as you want",
