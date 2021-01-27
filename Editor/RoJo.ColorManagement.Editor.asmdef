@@ -1,0 +1,18 @@
+{
+    "name": "Rojo.ColorManagement.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:46988dd440b6e60428af310c6de6459d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
