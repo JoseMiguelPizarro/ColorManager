@@ -2,18 +2,12 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.UIElements;
 
 namespace RoJo.ColorManagement
 {
 	[CustomPropertyDrawer(typeof(MaterialPropertyReference))]
 	public class MaterialReferenceDrawer : PropertyDrawer
 	{
-		public override VisualElement CreatePropertyGUI(SerializedProperty property)
-		{
-			return base.CreatePropertyGUI(property);
-		}
-
 		private static List<string> colorProperties = new List<string>();
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
