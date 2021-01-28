@@ -5,6 +5,22 @@
 
 This is a simple yet powerful color management solution for Unity. It allows you to create color palettes as Scriptable Objects to bind swatches to any shader color property to any number of materials.
 
+## How To Install
+
+Add the following dependency in your manifest.json
+``` json
+{
+  "dependencies": {
+      
+    ...
+    "com.rojo.colormanagement": "https://github.com/JoseMiguelPizarro/ColorManager.git"
+    ...
+  }
+}
+```
+
+Or install it via the <b>OpenUPM</b> CLI https://openupm.com/packages/com.rojo.colormanagement/
+
 ## Getting Started
 First, you must create a new Material Palette. To do so go to <b>Create->ColorManagement->MaterialPalette</b>.
 
