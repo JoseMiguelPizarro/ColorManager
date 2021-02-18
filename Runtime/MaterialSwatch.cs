@@ -10,7 +10,15 @@ namespace RoJo.ColorManagement
 		public Color color;
 		public List<MaterialPropertyReference> materialReferences = new List<MaterialPropertyReference>();
 
-		public ColorManager colorManager;
+		public void Apply()
+		{
+			foreach (var materialReference in materialReferences)
+			{
+				if (materialReference.material != null)
+				{
+					materialReference.material?.SetColor(materialReference.propertyName, color);
+				}
+			}
+		}
 	}
-
 }

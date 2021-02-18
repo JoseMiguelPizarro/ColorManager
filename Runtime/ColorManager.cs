@@ -8,10 +8,7 @@ namespace RoJo.ColorManagement
 
 		public void ApplyColors()
 		{
-			foreach (var swatch in currentPalette.swatches)
-			{
-				ApplySwatch(swatch);
-			}
+			currentPalette.Apply();
 		}
 
 		public void ApplySwatch(MaterialSwatch swatch)

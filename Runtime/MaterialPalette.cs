@@ -7,6 +7,13 @@ namespace RoJo.ColorManagement
 	public class MaterialPalette : ScriptableObject
 	{
 		public List<MaterialSwatch> swatches;
-	}
 
+		public void Apply()
+		{
+			foreach (var swatch in swatches)
+			{
+				swatch.Apply();
+			}
+		}
+	}
 }

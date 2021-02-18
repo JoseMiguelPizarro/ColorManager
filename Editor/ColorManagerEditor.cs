@@ -12,22 +12,11 @@ namespace RoJo.ColorManagement
 		private void OnEnable()
 		{
 			colorManager = target as ColorManager;
-			InitializeSwatches();
 
 			Undo.undoRedoPerformed += UndoHandler;
 		}
 
-		private void InitializeSwatches()
-		{
-			if (colorManager.currentPalette)
-			{
-				foreach (var swatch in colorManager.currentPalette.swatches)
-				{
-					swatch.colorManager = colorManager;
-				}
-			}
-		}
-
+		
 		private void OnDisable()
 		{
 			Undo.undoRedoPerformed -= UndoHandler;
@@ -46,7 +35,6 @@ namespace RoJo.ColorManagement
 
 			if (EditorGUI.EndChangeCheck())
 			{
-				InitializeSwatches();
 				serializedObject.ApplyModifiedProperties();
 			}
 
@@ -73,15 +61,12 @@ namespace RoJo.ColorManagement
 
 						EditorGUILayout.Space(EditorGUIUtility.singleLineHeight);
 					}
-
+					
 					if (GUILayout.Button("Add swatch"))
 					{
 						var index = swatches.arraySize;
 						swatches.InsertArrayElementAtIndex(index);
 						currentPaletteSO.ApplyModifiedProperties();
-
-						var swatch = palette.swatches[index];
-						swatch.colorManager = colorManager;
 					}
 
 					if (EditorGUI.EndChangeCheck())

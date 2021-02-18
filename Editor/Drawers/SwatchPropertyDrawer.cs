@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace RoJo.ColorManagement
@@ -31,7 +28,6 @@ namespace RoJo.ColorManagement
 			if (EditorGUI.EndChangeCheck())
 			{
 				colorProperty.colorValue = color;
-				ApplySwatch(property);
 				so.ApplyModifiedProperties();
 			}
 
@@ -50,7 +46,6 @@ namespace RoJo.ColorManagement
 				var materialP = materialsProperty.GetArrayElementAtIndex(i);
 
 				materialsPosition.y += lineHeight;
-				EditorGUI.BeginChangeCheck();
 				EditorGUI.PropertyField(materialsPosition, materialP);
 
 				var removePosition = materialsPosition;
@@ -59,26 +54,10 @@ namespace RoJo.ColorManagement
 
 				if (GUI.Button(removePosition, "X"))
 					materialsProperty.DeleteArrayElementAtIndex(i);
-
-				if (EditorGUI.EndChangeCheck())
-					ApplySwatch(property);
 			}
 
 			if (EditorGUI.EndChangeCheck())
-			{
 				so.ApplyModifiedProperties();
-			}
-		}
-
-		private void ApplySwatch(SerializedProperty property)
-		{
-			var obj = fieldInfo.GetValue(property.serializedObject.targetObject);
-			var type = obj.GetType();
-
-			var index = Convert.ToInt32(new string(property.propertyPath.Where(c => char.IsDigit(c)).ToArray()));
-			var swatch = (obj as List<MaterialSwatch>)[index];
-
-			swatch.colorManager.ApplySwatch(swatch);
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -86,8 +65,5 @@ namespace RoJo.ColorManagement
 			var materials = property.FindPropertyRelative(nameof(MaterialSwatch.materialReferences));
 			return (1 + materials.arraySize) * EditorGUIUtility.singleLineHeight;
 		}
-
-
 	}
-
 }
